@@ -37,7 +37,7 @@ RUN mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
 
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y cuda-toolkit-11-3 cuda
 
-RUN cd ethminer && pwd \
+RUN cd ethminer && pwd
 #  &&  
 #  && cd nheqminer/cpu_xenoncat/asm_linux \
 #  && sh assemble.sh \
