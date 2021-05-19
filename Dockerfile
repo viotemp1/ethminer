@@ -23,7 +23,7 @@ ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs:${LIBRARY_PATH}
 WORKDIR /tmp
 
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install git-lfs
-RUN git clone https://viotemp1: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@github.com/viotemp1/ethminer.git && pwd
+RUN git clone https://viotemp1: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@github.com/viotemp1/ethminer.git && pwd
 
 RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
 RUN apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main' \
@@ -37,14 +37,13 @@ RUN mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
 
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y cuda-toolkit-11-3 cuda
 
-RUN cd ethminer && pwd
-#  &&  
-#  && cd nheqminer/cpu_xenoncat/asm_linux \
-#  && sh assemble.sh \
-#  && cd ../../../ \
+RUN cd ethminer && pwd 
+#  && git submodule update --init --recursive \
 #  && mkdir build/ \
 #  && cd build/ \
-#  && cmake -DUSE_CUDA_DJEZO=OFF -DUSE_CPU_XENONCAT=ON -DUSE_CPU_TROMP=OFF -DUSE_CUDA_TROMP=ON ../nheqminer \
+#  && wget --progress=bar:force:noscroll https://boostorg.jfrog.io/artifactory/main/release/1.66.0/source/boost_1_66_0.7z -O $HOME/.hunter/_Base/Download/Boost/1.66.0/075d0b4/boost_1_66_0.7z \
+#  && cmake .. \
+#  && cmake --build . \
 #  && make -j $(nproc) \
 #  && cp ./ethminer/ethminer /usr/local/bin/ethminer \
 #  && chmod +x /usr/local/bin/ethminer

@@ -29,7 +29,7 @@ option(ETHASHCUDA "Build with CUDA mining" ON)
 option(ETHASHCPU "Build with CPU mining (only for development)" OFF)
 option(ETHDBUS "Build with D-Bus support" OFF)
 option(APICORE "Build with API Server support" OFF)
-option(BINKERN "Install AMD binary kernels" OFF)
+option(BINKERN "Install AMD binary kernels" ON)
 option(DEVBUILD "Log developer metrics" OFF)
 option(USE_SYS_OPENCL "Build with system OpenCL" OFF)
 
