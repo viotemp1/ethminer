@@ -1,2 +1,3 @@
 #!bin/bash
-docker kill nheqminer
+
+docker stop $(docker ps -a -q --filter ancestor=ethminer)
